@@ -1,1 +1,67 @@
+/* tech dark theme */
+:root {
+  --bg: #0d1117;          /* dark background */
+  --text: #e6edf3;        /* light text */
+  --link: #58a6ff;        /* neon-blue links */
+  --accent: #161b22;      /* darker panels */
+  --highlight: #39ff14;   /* neon green highlight */
+  --max-width: 900px;
+  --space: 1rem;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
 
+/* global reset */
+* { box-sizing: border-box; }
+
+/* navigation var */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+}
+
+header {
+  background: var(--accent);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--highlight);
+  text-shadow: 0 0 8px var(--highlight);
+}
+
+/* section/cards */
+main > section {
+  margin-block: 1.5rem;
+  padding: 1.5rem;
+  background: var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+main > section:hover {
+  transform: translateY(-4px); /* floating hover effect */
+}
+
+/* footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8b949e;
+  border-top: 1px solid #30363d;
+}
