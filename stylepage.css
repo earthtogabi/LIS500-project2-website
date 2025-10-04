@@ -41,6 +41,7 @@ header {
   background: var(--accent);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  justify-items: center;
 }
 
 nav {
