@@ -244,9 +244,11 @@ footer {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;         
-  min-height: 100%;                
+  display: block;
+  margin: 0 auto 1rem; 
+  border-radius: 8px;
+  max-width: 80%; 
+  height: auto;              
 }
 
 .card img {
