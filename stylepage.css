@@ -198,72 +198,41 @@ footer {
   text-align: center;
   transition: transform 0.2s ease;
 }
+.tech-hero:hover { transform: translateY(-4px); }
+.tech-hero h2 { color: #d0e2ff; font-size: 1.8rem; margin-bottom: .25rem; }
+.tech-hero h3 { color: var(--highlight); font-weight: 500; margin: 0 0 1rem; }
+.tech-hero img { width: 300px; border-radius: 10px; box-shadow: var(--shadow); margin-bottom: 1rem; }
+.tech-hero ul { list-style: none; padding: 0; }
+.tech-hero ul li { margin: .5rem 0; }
+.tech-hero a { color: var(--link); font-weight: 600; text-decoration: none; transition: color .3s; }
+.tech-hero a:hover { color: var(--highlight); }
 
-.tech-hero:hover {
-  transform: translateY(-4px);
-}
-
-.tech-hero h2 {
-  color: #d0e2ff;
-  font-size: 1.8rem;
-  margin-bottom: 0.25rem;
-}
-
-.tech-hero h3 {
-  color: var(--highlight);
-  font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.tech-hero img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  margin-bottom: 1rem;
-}
-
-.tech-hero ul {
-  list-style: none;
-  padding: 0;
-}
-
-.tech-hero ul li {
-  margin: 0.5rem 0;
-}
-
-.tech-hero a {
-  color: var(--link);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.tech-hero a:hover {
-  color: var(--highlight);
-}
-
+/* cards */
 .card {
-  display: block;
-  margin: 0 auto 1rem; 
-  border-radius: 8px;
-  max-width: 80%; 
-  height: auto;              
+  padding: 1rem 1.25rem;
+  border: 1px solid #30363d;
+  border-radius: var(--radius);
+  background: var(--accent);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  display: flex;                
+  flex-direction: column;
+  min-height: 100%;
 }
+.card:hover { transform: translateY(-4px); }
+.card h3 { margin-top: 0; color: #d0e2ff; }
+.card p { margin: .25rem 0 0; color: #b6c2cf; }
 
+/* center images inside cards (not whole card) */
 .card img {
+  display: block;
+  margin: 0 auto .75rem;  
   width: 100%;
-  aspect-ratio: 3 / 2;            
-  object-fit: cover;              
+  max-width: 90%;         
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: .75rem;
 }
 
-.card ul {
-  margin-top: auto;               
-  padding-left: 1.1rem;         
-}
-
-.card ul li {
-  margin: .25rem 0;
-}
+.card ul { margin-top: auto; padding-left: 1.1rem; }
+.card ul li { margin: .25rem 0; }
