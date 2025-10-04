@@ -1,60 +1,85 @@
-<link rel="stylesheet" href="stylepage.css">
-<html lang="en">
 <!doctype html>
-<!-- Add a place to navigate back to the home page --> 
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> Tech Hero </title>
-    <link rel="stylesheet" href="stylepage.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Hero</title>
+  <link rel="stylesheet" href="stylepage.css" />
 </head>
 
 <body>
     <!-- site header with nav -->
-    <header>
-      <h1>Tech Hero</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resources.html">Resources</a>
-      </nav>
-      <a class="skip-link" href="#main">Skip to content</a>
-    </header>
-<section class="tech-hero">
-  <h2> Becky George-David </h2>
-  <h3> Executive Director of Product, JP Morgan & Chase Co.</h3>
-    <img src="resource/image/Becky George-David.jpg" alt="Becky George-David">
-    <p>
-    Becky George-David is changing the norms in the tech space, where she leads Product Development for JP Morgan Chase’s first digital banking initiative outside of the U.S. 
-    After graduating in 2013 with a degree in Computing from the University of East London, she worked at NatWest Markets and Group. After four years with NatWest, 
-    she joined JP Morgan Chase while pursuing her Master’s in Business at Imperial Business School.
-    George-David also co-leads JP Morgan’s Black Employee Network across the EMEA region and was a finalist for the 2022 Black British Business Awards. 
-    To learn more about George-David’s impact in the tech space, check out the links below:
-    </p>
-    <ul>
-    <a href="https://www.linkedin.com/in/beckygeorgedavid/"> Becky George-David's LinkedIn</a>
-    <a href="https://www.imperial.ac.uk/business-school/programmes/our-students/becky-george-david/"> Article written by Becky George-David for the Imperial Business School </a>
-    </ul>
-</section>
+  <header>
+    <h1>LIS 500 | Project 2</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="tech-hero.html" aria-current="page">Tech Hero</a>
+    </nav>
+  </header>
 
-<section class="tech-hero">
-  <h2>Joy Buolamwini</h2>
-  <h3>Founder, Algorithmic Justice League</h3>
-  <img src="resource/image/JoyBuolamwini.jpg" alt="Joy Buolamwini speaking at a conference">
-  <p>
-    Joy Buolamwini is a computer scientist and digital activist working to fight bias in artificial intelligence. 
-    As the founder of the <strong>Algorithmic Justice League</strong>, she advocates for equitable and transparent 
-    machine learning systems that protect underrepresented communities. Her research at the MIT Media Lab revealed 
-    racial and gender biases in commercial facial recognition technology, sparking global conversations around ethical AI.  
-  </p>
-  <ul>
-    <li><a href="https://www.ajl.org/">Algorithmic Justice League</a></li>
-    <li><a href="https://www.ted.com/speakers/joy_buolamwini">Joy Buolamwini’s TED Talk</a></li>
-  </ul>
-</section>
+  <main id="main">
+    <!-- hero banner -->
+    <section class="hero">
+      <h2>Leaders Advancing Equity in Tech</h2>
+      <p>
+        This page highlights individuals working to make technology more equitable and inclusive.
+        Explore short profiles and follow the links to learn more.
+      </p>
+      <p>
+        <a class="btn" href="resources.html">Learn the Concepts</a>
+        <a class="btn" href="about.html">Meet the Team</a>
+      </p>
+    </section>
 
- <footer>
-      <small>&copy; LIS 500 Project 2</small>
-</footer>
+    <!-- grid of hero cards -->
+    <section>
+      <h2>Tech Heroes</h2>
+      <div class="grid">
+        <!-- Carol: Becky George-David -->
+        <article class="card">
+          <h3>Becky George-David</h3>
+          <p><em>Executive Director of Product, JP Morgan Chase &amp; Co.</em></p>
+          <img src="resource/image/Becky George-David.jpg" alt="Becky George-David" />
+          <p>
+            Becky George-David is changing the norms in the tech space, where she leads Product Development for JP Morgan Chase’s first digital banking initiative outside of the U.S.
+            After graduating in 2013 with a degree in Computing from the University of East London, she worked at NatWest Markets and Group.
+            After four years with NatWest, she joined JP Morgan Chase while pursuing her Master’s in Business at Imperial Business School.
+            George-David also co-leads JP Morgan’s Black Employee Network across the EMEA region and was a finalist for the 2022 Black British Business Awards.
+            To learn more about George-David’s impact in the tech space, check out the links below:
+          </p>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/beckygeorgedavid/" target="_blank">Becky George-David’s LinkedIn</a></li>
+            <li><a href="https://www.imperial.ac.uk/business-school/programmes/our-students/becky-george-david/" target="_blank">
+              Article written by Becky George-David for the Imperial Business School</a></li>
+          </ul>
+        </article>
+
+        <!-- Gabi: Joy Buolamwini-->
+        <article class="card">
+          <h3>Joy Buolamwini</h3>
+          <p><em>Founder, Algorithmic Justice League</em></p>
+          <img src="resource/image/JoyBuolamwini.jpg" alt="Joy Buolamwini speaking at a conference" />
+          <p>
+            Joy Buolamwini is a computer scientist and digital activist focused on uncovering algorithmic bias.
+            As the founder of the <strong>Algorithmic Justice League</strong>, she leads advocacy for ethical and transparent AI systems.
+            Her research at the MIT Media Lab revealed racial and gender bias in facial recognition systems,
+            sparking global awareness about fairness and accountability in AI.
+          </p>
+          <ul>
+            <li><a href="https://www.ajl.org/" target="_blank">Algorithmic Justice League</a></li>
+            <li><a href="https://www.ted.com/speakers/joy_buolamwini" target="_blank">Joy Buolamwini’s TED Talk</a></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer>
+    <small>&copy; 2025 LIS 500 Project 2 | Designed by Gabrielle C., Carol O., and Gianna W.</small>
+  </footer>
 </body>
 </html>

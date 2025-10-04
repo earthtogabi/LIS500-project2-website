@@ -242,3 +242,26 @@ footer {
 .tech-hero a:hover {
   color: var(--highlight);
 }
+
+.card {
+  display: flex;
+  flex-direction: column;         
+  min-height: 100%;                
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;            
+  object-fit: cover;              
+  border-radius: 8px;
+  margin-bottom: .75rem;
+}
+
+.card ul {
+  margin-top: auto;               
+  padding-left: 1.1rem;         
+}
+
+.card ul li {
+  margin: .25rem 0;
+}
