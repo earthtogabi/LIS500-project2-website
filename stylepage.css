@@ -236,3 +236,14 @@ footer {
 
 .card ul { margin-top: auto; padding-left: 1.1rem; }
 .card ul li { margin: .25rem 0; }
+
+/* about page profile photos */
+.profile {
+  display: block;
+  margin: 0 auto 1rem;   
+  width: 260px;          
+  aspect-ratio: 3 / 4;   
+  object-fit: cover;     
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
