@@ -20,185 +20,153 @@
     </nav>
 </header>
 
-<main id="main">
+<main>
 
-    <!-- 1. Introduction -->
-    <section aria-labelledby="tm-intro-heading">
-      <h2 id="tm-intro-heading">Teachable Machine Project</h2>
-      <p>
-        This page showcases our group’s machine learning experiment using Google’s Teachable Machine.
-        We trained a hand sign classifier and connected it to a p5.js sketch so that the model can
-        recognize numbers using live webcam input.
-      </p>
-      <!-- TODO: 如果老师要 accessibility，可以在这里再加一两句关于 keyboard navigation / alt text 的说明 -->
-    </section>
+<!-- Title -->
+<section>
+    <h2>Teachable Machine Project</h2>
+    <p>This page showcases our machine learning model, training process, and project reflection.</p>
+</section>
 
-    <!-- 2. Live Demo ：insert p5.js / Teachable Machine -->
-    <section aria-labelledby="tm-demo-heading">
-      <h2 id="tm-demo-heading">Live ML Demo</h2>
-      <p>
-        Use the webcam demo below to try our hand sign classifier. Hold up your right hand,
-        palm facing the camera, and show the hand signs for one, two, or three.
-      </p>
+<!-- 1. Embedded Teachable Machine Application -->
+<section id="tm-embed">
+    <h3>📌 Live Machine Learning Demo</h3>
+    <p>Try our hand-sign classifier trained with Teachable Machine and deployed using p5.js and ml5.js.</p>
 
-      <div class="tm-iframe-wrapper">
-        <iframe
-          title="Hand Sign Teachable Machine Demo"
-          src="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm"
-          width="800"
-          height="600"
-          style="border: none; max-width: 100%;"
-          loading="lazy">
-        </iframe>
-      </div>
+    <!-- iframe -->
+    <iframe 
+        src="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm"
+        width="850"
+        height="600"
+        style="border:none; margin-top:20px;">
+    </iframe>
+</section>
 
-      <!-- TODO: 如果老师更希望看到“视频”，可以在这里再加一个 <video>，录屏你们使用 demo 的过程 -->
-      <!-- 例如：录一段 20–30 秒的视频，文件放在 resource/video 里，然后在这里用 <video controls> 引用 -->
-    </section>
+<!-- 2. Model Training Details -->
+<section id="training">
+    <h3>📌 Model Training Process</h3>
+    <p>Below are the details from our model creation process, including dataset size and challenges during training.</p>
 
-    <!-- 3. Model Training -->
-    <section aria-labelledby="tm-training-heading">
-      <h2 id="tm-training-heading">Model Training Process</h2>
+    <!-- Insert screenshots -->
+    <div class="image-placeholder">
+        <!-- ⭐ 在这里插入你队友邮件里的 1、2、3 三个训练截图 ⭐ -->
+        <p><em>Insert training screenshots here.</em></p>
+    </div>
 
-      <p>
-        Our model classifies three hand signs: <strong>one</strong>, <strong>two</strong>, and
-        <strong>three</strong>. We collected separate image datasets for each class using
-        Teachable Machine’s webcam capture tool.
-      </p>
+    <h4>Training Notes</h4>
+    <ul>
+        <li>I originally planned to classify hand signs for 1–5, but it required too many images for reliable accuracy.</li>
+        <li>I restarted the training because turning my hand caused fingers to overlap and the model misclassified them. 
+            (Source: teammate notes, PDF page 1) :contentReference[oaicite:0]{index=0}</li>
+        <li>The final version only recognizes <strong>right hand, palm facing forward</strong>.</li>
+        <li>Images were captured in all four corners of the screen + center.</li>
+        <li>Dataset size:
+            <ul>
+                <li>one → 503 images</li>
+                <li>two → 578 images</li>
+                <li>three → 467 images</li>
+            </ul>
+        </li>
+    </ul>
+</section>
 
-      <ul>
-        <li>Initially planned to classify hand signs 1–5, but reduced to 1–3 due to the large number of photos needed.</li>
-        <li>We restarted the dataset after noticing that rotating the hand caused all fingers to line up,
-            which confused the model.</li>
-        <li>The final dataset uses only the <strong>right hand</strong>, with the <strong>palm facing forward</strong>.</li>
-        <li>Images were captured with the hand in all corners of the frame as well as the center, to improve robustness.</li>
-        <li>Approximate image counts per class: one ≈ 503, two ≈ 578, three ≈ 467.</li>
-      </ul>
+<!-- 3. Model Links -->
+<section id="links">
+    <h3>📌 Model & Code Links</h3>
 
-      <!-- TODO: 在这里插入训练界面截图 -->
-      <!-- 示例： -->
-      <!--
-      <figure>
-        <img src="resource/image/tm-dataset-overview.jpg"
-             alt="Screenshot of Teachable Machine showing the three hand sign classes and image counts.">
-        <figcaption>Figure 1. Overview of our Teachable Machine dataset for one, two, and three.</figcaption>
-      </figure>
-      -->
+    <ul>
+        <li>🔹 Live Demo (iframe version): <a href="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm" target="_blank">Click here</a></li>
+        <li>🔹 View Only: <a href="https://editor.p5js.org/czeremuga/full/cGu21suXN" target="_blank">p5.js View</a></li>
+        <li>🔹 Edit Code: <a href="https://editor.p5js.org/czeremuga/sketches/cGu21suXN" target="_blank">p5.js Edit</a></li>
+        <li>🔹 Teachable Machine Model: <a href="https://teachablemachine.withgoogle.com/models/7X2wmwi8j/" target="_blank">Model Page</a></li>
+    </ul>
+</section>
 
-      <!-- TODO: 如果你们有更多截图，可以再加 figure2、figure3 展示不同采集角度或 training 完成界面 -->
-    </section>
+<!-- 4. Code Snippet -->
+<section id="code">
+    <h3>📌 Code Snippet</h3>
+    <p>Below is an excerpt from the p5.js implementation of our model.</p>
 
-    <!-- 4. Model Behavior & Results 区：效果、错误、限制 -->
-    <section aria-labelledby="tm-results-heading">
-      <h2 id="tm-results-heading">Model Behavior and Results</h2>
+    <pre>
+/*
+ Hand Sign Teachable Machine Classifier
+ Using ml5.js + p5.js
+ -> Live webcam feed
+ -> Classifies hand signs (1, 2, 3)
+ -> Emoji number in top-right corner
+ -> Instruction banner at top
+ -> Label bar at bottom
+*/
+let video;
+let label = "loading...";
+let classifier;
 
-      <p>
-        Overall, the classifier performs well when the hand is clearly visible, close to the camera,
-        and matches the training conditions (right hand, palm facing forward). However, we noticed
-        several limitations that connect directly to issues discussed in <em>Unmasking AI</em>:
-      </p>
-
-      <ul>
-        <!-- TODO: 下面这些点可以根据你们自己的观察改写 / 补充 -->
-        <li>Performance drops when lighting changes or the background is cluttered.</li>
-        <li>The model becomes less confident when the hand is partially out of frame.</li>
-        <li>Left-hand signs or rotated hands are often misclassified, because they were not included in the training data.</li>
-        <li>Different skin tones, camera quality, or distance from the camera could also affect accuracy,
-            even though our small dataset doesn’t fully represent that diversity.</li>
-      </ul>
-
-      <!-- TODO: 这里可以插入一张“输出界面”的截图（像邮件里右侧那块 preview + output 条形图） -->
-    </section>
-
-    <!-- 5. Ethical Reflection & Connection to Unmasking AI -->
-    <section aria-labelledby="tm-ethics-heading">
-      <h2 id="tm-ethics-heading">Ethical Reflection &amp; Connections to <em>Unmasking AI</em></h2>
-
-      <!-- TODO: 这一段是大头：可以写 2–3 段总的 group reflection，
-           后面再给每个组员各自的 Project Statement 页面（或锚点） -->
-
-      <p>
-        As a group, we used this small hand sign classifier to think about the much larger questions
-        Joy Buolamwini raises in <em>Unmasking AI</em> — especially how biased datasets and narrow
-        definitions of “normal” bodies can lead to unfair outcomes. Our model “works” only for a
-        specific set of conditions: one right hand, palm facing forward, in front of a webcam. This
-        mirrors how real-world systems often silently exclude people whose bodies, gestures, or
-        environments do not match the training data.
-      </p>
-
-      <p>
-        In the following sections, each team member offers their own project statement, connecting
-        this hands-on experiment to key ideas from the book, such as intersectionality, surveillance,
-        and the consequences of treating biased data as objective truth.
-      </p>
-    </section>
-
-    <!-- 6. Individual Project Statements（每个人 1000 字可以各自一个 subsection） -->
-    <section aria-labelledby="tm-statements-heading">
-      <h2 id="tm-statements-heading">Individual Project Statements</h2>
-
-      <!-- TODO: 每位组员一个 <article>，里边写各自的 1000 字反思。
-           现在先用 placeholder，之后你写好了直接替换。 -->
-
-      <article aria-labelledby="statement-gianna-heading">
-        <h3 id="statement-gianna-heading">Gianna Wu – Project Statement</h3>
-        <p>
-          <!-- TODO: 在这里粘贴你自己的 1000+ 字反思：
-               1. 你在 TM 项目里做了什么
-               2. 你从 Unmasking AI 里学到的概念（bias, intersectionality, surveillance, etc.）
-               3. 这次实验如何让你重新思考“数据是否中立”、“谁被包含 / 排除”等问题 -->
-        </p>
-      </article>
-
-      <article aria-labelledby="statement-gabrielle-heading">
-        <h3 id="statement-gabrielle-heading">Gabrielle Czeremuga – Project Statement</h3>
-        <p>
-          <!-- TODO: 让队友把她的反思段落发给你们，贴在这里 -->
-        </p>
-      </article>
-
-      <article aria-labelledby="statement-carol-heading">
-        <h3 id="statement-carol-heading">Carol Madison Oh – Project Statement</h3>
-        <p>
-          <!-- TODO: 第三位组员的个人反思 -->
-        </p>
-      </article>
-
-    </section>
-
-    <!-- 7. Links & Technical Details（代码链接、模型链接、可选：简短 code snippet） -->
-    <section aria-labelledby="tm-links-heading">
-      <h2 id="tm-links-heading">Links &amp; Technical Details</h2>
-
-      <p>Here are links to our Teachable Machine model and p5.js sketch:</p>
-      <ul>
-        <li><a href="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm" target="_blank" rel="noopener">Live demo (p5.js full view)</a></li>
-        <li><a href="https://editor.p5js.org/czeremuga/full/cGu21suXN" target="_blank" rel="noopener">View-only version</a></li>
-        <li><a href="https://editor.p5js.org/czeremuga/sketches/cGu21suXN" target="_blank" rel="noopener">Editable p5.js sketch</a></li>
-        <li><a href="https://teachablemachine.withgoogle.com/models/7X2wmwi8j/" target="_blank" rel="noopener">Teachable Machine model</a></li>
-      </ul>
-
-      <!-- 可选：展示一点点 code，让老师看到你们不是只点点按钮 -->
-      <!-- TODO: 如果你们要贴代码，可以只贴核心 fragment，别全贴，避免页面太长 -->
-
-      <!--
-      <pre><code>
-// Example snippet from our p5.js classifier
 function preload() {
-  classifier = ml5.imageClassifier(
-    'https://teachablemachine.withgoogle.com/models/7X2wmwi8j/model.json'
-  );
+    classifier = ml5.imageClassifier(
+        'https://teachablemachine.withgoogle.com/models/7X2wmwi8j/model.json'
+    );
 }
-      </code></pre>
-      -->
-    </section>
 
-  </main>
+function setup() {
+    createCanvas(640, 520);
+    video = createCapture(VIDEO);
+    video.hide();
+    classifyVideo();
+}
+    </pre>
 
-  <footer>
-    <p>LIS 500 &mdash; Fall 2025 &mdash; Teachable Machine Project3</p>
-  </footer>
+    <p><em>Full code available in the “Edit Code” link above.</em></p>
+</section>
+
+<!-- 5. Project Statement -->
+<section class="statement">
+    <h3>📌 Project Reflection Statement</h3>
+
+    <p style="margin-bottom: 10px;">
+        Below is our full project reflection. The text is placed inside a scrollable box 
+        to keep the webpage clean and easy to navigate.
+    </p>
+
+    <div style="
+        max-width: 900px;
+        height: 300px;
+        overflow-y: scroll;
+        padding: 15px;
+        border: 2px solid #88ffc8;
+        border-radius: 8px;
+        background-color: rgba(255,255,255,0.08);
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #e6e6e6;
+        box-shadow: 0 0 10px rgba(136,255,200,0.3);
+    ">
+        <p>
+            <em>
+                <p>
+As we read Unmasking AI, it would be insufficient to say that we only learned a lesson or two when in reality our eyes were opened to many implicit biases and gaps within the AI boom. As we worked to complete this final project, one of the main lessons that Dr. Joy Buolamwini specifically emphasized in her book, <em>Unmasking AI</em>, was that AI models have a “coded gaze.” Because AI models are trained with data and created by human coders, it is impossible to prevent implicit bias from entering the system. For example, if the data being used does not take into account diversity or intersectionality, it is extremely likely that one would create a biased and unfair system. Additionally, humans have many types of implicit biases that they themselves may not even notice, making it easier for this bias to creep into their work. Although this concept might seem intuitive, the world of AI often obscures the bias embedded in its results.
+                </p>
+                <p>
+Buolamwini witnessed firsthand these biased systems with her “Mirror of Positivity.” Her mirror was designed to show positive affirmations around her reflection, but the code she used failed to recognize her face. At first this seemed trivial, but it opened her eyes to how biased the code was—and how quickly such bias can ruin the user experience. She later discovered that many AI systems created by highly competitive companies operate using biased datasets and produce biased outcomes. Despite the fact that these companies took steps to avoid bias, eliminating it is nearly impossible because of the implicit biases embedded in the human mind. Buolamwini emphasizes the importance of testing systems for bias, because bias cannot always be seen with the naked eye. As we developed our own Teachable Machine, we kept her message in mind and tested our model to reduce bias as much as possible.
+                </p>
+                <p>
+As we tried not only to incorporate the least amount of bias but also to test our machine for hidden bias, Buolamwini’s lessons on intersectionality also resonated with us. Intersectionality is the idea that different aspects of social identity interact to give individuals unique experiences and privileges. Although this concept originally felt overwhelming when introduced at the beginning of the course, we gradually realized how integral it is to understanding human experience. When Buolamwini discussed AI systems and their effects on people, intersectionality consistently played a significant role. Because developing AI requires specialized knowledge, it is often created by a small, homogeneous group of people—which can limit diversity in perspectives. Since individuals with similar identities tend to share similar implicit biases, those biases may influence the development of AI without being noticed. For instance, when Buolamwini created her positivity mirror, the original authors of the code had included only white faces in their dataset, which likely caused no problems during testing because the creators themselves were probably white. Understanding the role of intersectionality in perpetuating bias, we made sure that our group reviewed our model collectively and included different types of data whenever possible.
+                </p>
+                <p>
+Having a diverse set of data is important for reducing bias, but during our Teachable Machine process, we discovered that diverse data can also introduce complexity and errors. Our model was built to detect how many fingers the user was holding up to the camera, but the more images we uploaded, the more misclassifications appeared. We eventually realized that depending on the direction the hand was facing, the model sometimes interpreted a different number of fingers. To solve this, we restricted our dataset to images where the user’s hand faced directly toward the camera. This improved accuracy, but it also showed us that creating a robust model requires carefully choosing which images to include—and that excluding images is sometimes necessary.
+                </p>
+                <p>
+Based on these takeaways, it may seem that AI and machine learning bring more harm than good to society. But although Buolamwini points out their dangers, she also emphasizes that these technologies are created by people who genuinely hope to improve the world. In order to make something better, we must first identify its flaws. Acknowledging limits and drawbacks does not mean abandoning AI altogether; rather, it means understanding where improvements are needed. Even with our best efforts, our Teachable Machine may still contain bias or limitations. But that does not make our model inherently harmful—what matters is our willingness to acknowledge these issues and continue improving.
+                </p>
+                <p>
+Finally, one of the most powerful lessons we gained from Buolamwini and other authors in this course is the importance of continuing to work toward positive change. Although it may feel overwhelming to confront the many problems—such as implicit bias—around us, identifying these issues is the first essential step. Many writers we studied highlighted the harms that technology, including hashtags and AI, has brought into society. But by acknowledging these harms, we can begin working toward solutions. Coding is inherently challenging, and thinking about its social implications can make it even more intimidating. Buolamwini and others remind us that perfection is not the goal—growth is. As we complete this assignment, we are not striving for a flawless product, but rather to learn from our mistakes so that we can become better coders and create more positive technological impacts in the future.
+                </p>
+            </em>
+        </p>
+    </div>
+</section>
+
+
+</main>
 
 </body>
 </html>
-
