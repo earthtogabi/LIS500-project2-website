@@ -20,10 +20,184 @@
     </nav>
 </header>
 
-<main>
-    <h2>Teachable Machine Project</h2>
-    <p>This page will showcase our machine learning model and project reflections.</p>
-</main>
+<main id="main">
+
+    <!-- 1. Introduction -->
+    <section aria-labelledby="tm-intro-heading">
+      <h2 id="tm-intro-heading">Teachable Machine Project</h2>
+      <p>
+        This page showcases our group’s machine learning experiment using Google’s Teachable Machine.
+        We trained a hand sign classifier and connected it to a p5.js sketch so that the model can
+        recognize numbers using live webcam input.
+      </p>
+      <!-- TODO: 如果老师要 accessibility，可以在这里再加一两句关于 keyboard navigation / alt text 的说明 -->
+    </section>
+
+    <!-- 2. Live Demo ：insert p5.js / Teachable Machine -->
+    <section aria-labelledby="tm-demo-heading">
+      <h2 id="tm-demo-heading">Live ML Demo</h2>
+      <p>
+        Use the webcam demo below to try our hand sign classifier. Hold up your right hand,
+        palm facing the camera, and show the hand signs for one, two, or three.
+      </p>
+
+      <div class="tm-iframe-wrapper">
+        <iframe
+          title="Hand Sign Teachable Machine Demo"
+          src="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm"
+          width="800"
+          height="600"
+          style="border: none; max-width: 100%;"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- TODO: 如果老师更希望看到“视频”，可以在这里再加一个 <video>，录屏你们使用 demo 的过程 -->
+      <!-- 例如：录一段 20–30 秒的视频，文件放在 resource/video 里，然后在这里用 <video controls> 引用 -->
+    </section>
+
+    <!-- 3. Model Training -->
+    <section aria-labelledby="tm-training-heading">
+      <h2 id="tm-training-heading">Model Training Process</h2>
+
+      <p>
+        Our model classifies three hand signs: <strong>one</strong>, <strong>two</strong>, and
+        <strong>three</strong>. We collected separate image datasets for each class using
+        Teachable Machine’s webcam capture tool.
+      </p>
+
+      <ul>
+        <li>Initially planned to classify hand signs 1–5, but reduced to 1–3 due to the large number of photos needed.</li>
+        <li>We restarted the dataset after noticing that rotating the hand caused all fingers to line up,
+            which confused the model.</li>
+        <li>The final dataset uses only the <strong>right hand</strong>, with the <strong>palm facing forward</strong>.</li>
+        <li>Images were captured with the hand in all corners of the frame as well as the center, to improve robustness.</li>
+        <li>Approximate image counts per class: one ≈ 503, two ≈ 578, three ≈ 467.</li>
+      </ul>
+
+      <!-- TODO: 在这里插入训练界面截图 -->
+      <!-- 示例： -->
+      <!--
+      <figure>
+        <img src="resource/image/tm-dataset-overview.jpg"
+             alt="Screenshot of Teachable Machine showing the three hand sign classes and image counts.">
+        <figcaption>Figure 1. Overview of our Teachable Machine dataset for one, two, and three.</figcaption>
+      </figure>
+      -->
+
+      <!-- TODO: 如果你们有更多截图，可以再加 figure2、figure3 展示不同采集角度或 training 完成界面 -->
+    </section>
+
+    <!-- 4. Model Behavior & Results 区：效果、错误、限制 -->
+    <section aria-labelledby="tm-results-heading">
+      <h2 id="tm-results-heading">Model Behavior and Results</h2>
+
+      <p>
+        Overall, the classifier performs well when the hand is clearly visible, close to the camera,
+        and matches the training conditions (right hand, palm facing forward). However, we noticed
+        several limitations that connect directly to issues discussed in <em>Unmasking AI</em>:
+      </p>
+
+      <ul>
+        <!-- TODO: 下面这些点可以根据你们自己的观察改写 / 补充 -->
+        <li>Performance drops when lighting changes or the background is cluttered.</li>
+        <li>The model becomes less confident when the hand is partially out of frame.</li>
+        <li>Left-hand signs or rotated hands are often misclassified, because they were not included in the training data.</li>
+        <li>Different skin tones, camera quality, or distance from the camera could also affect accuracy,
+            even though our small dataset doesn’t fully represent that diversity.</li>
+      </ul>
+
+      <!-- TODO: 这里可以插入一张“输出界面”的截图（像邮件里右侧那块 preview + output 条形图） -->
+    </section>
+
+    <!-- 5. Ethical Reflection & Connection to Unmasking AI -->
+    <section aria-labelledby="tm-ethics-heading">
+      <h2 id="tm-ethics-heading">Ethical Reflection &amp; Connections to <em>Unmasking AI</em></h2>
+
+      <!-- TODO: 这一段是大头：可以写 2–3 段总的 group reflection，
+           后面再给每个组员各自的 Project Statement 页面（或锚点） -->
+
+      <p>
+        As a group, we used this small hand sign classifier to think about the much larger questions
+        Joy Buolamwini raises in <em>Unmasking AI</em> — especially how biased datasets and narrow
+        definitions of “normal” bodies can lead to unfair outcomes. Our model “works” only for a
+        specific set of conditions: one right hand, palm facing forward, in front of a webcam. This
+        mirrors how real-world systems often silently exclude people whose bodies, gestures, or
+        environments do not match the training data.
+      </p>
+
+      <p>
+        In the following sections, each team member offers their own project statement, connecting
+        this hands-on experiment to key ideas from the book, such as intersectionality, surveillance,
+        and the consequences of treating biased data as objective truth.
+      </p>
+    </section>
+
+    <!-- 6. Individual Project Statements（每个人 1000 字可以各自一个 subsection） -->
+    <section aria-labelledby="tm-statements-heading">
+      <h2 id="tm-statements-heading">Individual Project Statements</h2>
+
+      <!-- TODO: 每位组员一个 <article>，里边写各自的 1000 字反思。
+           现在先用 placeholder，之后你写好了直接替换。 -->
+
+      <article aria-labelledby="statement-gianna-heading">
+        <h3 id="statement-gianna-heading">Gianna Wu – Project Statement</h3>
+        <p>
+          <!-- TODO: 在这里粘贴你自己的 1000+ 字反思：
+               1. 你在 TM 项目里做了什么
+               2. 你从 Unmasking AI 里学到的概念（bias, intersectionality, surveillance, etc.）
+               3. 这次实验如何让你重新思考“数据是否中立”、“谁被包含 / 排除”等问题 -->
+        </p>
+      </article>
+
+      <article aria-labelledby="statement-gabrielle-heading">
+        <h3 id="statement-gabrielle-heading">Gabrielle Czeremuga – Project Statement</h3>
+        <p>
+          <!-- TODO: 让队友把她的反思段落发给你们，贴在这里 -->
+        </p>
+      </article>
+
+      <article aria-labelledby="statement-carol-heading">
+        <h3 id="statement-carol-heading">Carol Madison Oh – Project Statement</h3>
+        <p>
+          <!-- TODO: 第三位组员的个人反思 -->
+        </p>
+      </article>
+
+    </section>
+
+    <!-- 7. Links & Technical Details（代码链接、模型链接、可选：简短 code snippet） -->
+    <section aria-labelledby="tm-links-heading">
+      <h2 id="tm-links-heading">Links &amp; Technical Details</h2>
+
+      <p>Here are links to our Teachable Machine model and p5.js sketch:</p>
+      <ul>
+        <li><a href="https://editor.p5js.org/czeremuga/full/aRN4PS2Nm" target="_blank" rel="noopener">Live demo (p5.js full view)</a></li>
+        <li><a href="https://editor.p5js.org/czeremuga/full/cGu21suXN" target="_blank" rel="noopener">View-only version</a></li>
+        <li><a href="https://editor.p5js.org/czeremuga/sketches/cGu21suXN" target="_blank" rel="noopener">Editable p5.js sketch</a></li>
+        <li><a href="https://teachablemachine.withgoogle.com/models/7X2wmwi8j/" target="_blank" rel="noopener">Teachable Machine model</a></li>
+      </ul>
+
+      <!-- 可选：展示一点点 code，让老师看到你们不是只点点按钮 -->
+      <!-- TODO: 如果你们要贴代码，可以只贴核心 fragment，别全贴，避免页面太长 -->
+
+      <!--
+      <pre><code>
+// Example snippet from our p5.js classifier
+function preload() {
+  classifier = ml5.imageClassifier(
+    'https://teachablemachine.withgoogle.com/models/7X2wmwi8j/model.json'
+  );
+}
+      </code></pre>
+      -->
+    </section>
+
+  </main>
+
+  <footer>
+    <p>LIS 500 &mdash; Fall 2025 &mdash; Teachable Machine Project3</p>
+  </footer>
 
 </body>
 </html>
