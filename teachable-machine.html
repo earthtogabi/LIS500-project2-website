@@ -30,31 +30,52 @@
 
 <!-- 1. Embedded Teachable Machine Application -->
 <section id="tm-embed">
-    <h3>📌 Live Machine Learning Demo</h3>
-    <p>Try our hand-sign classifier trained with Teachable Machine and deployed using p5.js and ml5.js.</p>
 
-    <div style="
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 20px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 10px;
-        border: 2px solid #88ffc8;
-        box-shadow: 0 0 10px rgba(136,255,200,0.3);
-    ">
-        <iframe 
-            src="https://editor.p5js.org/czeremuga/full/cGu21suXN"
-            width="100%"
-            height="600"
-            style="border:none; border-radius:8px;"
-            allow="camera; microphone"
-        ></iframe>
+  <h3>⭐ Live Machine Learning Demo</h3>
 
-        <p style="font-size: 0.9rem; color:#ccc; margin-top:10px;">
-            *If the webcam does not load, please refresh or allow camera permissions.
-        </p>
-    </div>
+  <!-- Usage Explanation -->
+  <div class="tm-info-box">
+    <h4>What This Model Does</h4>
+    <p>
+      This classifier recognizes <strong>hand signs for Happy, Neutral, and Sad</strong>. 
+      Please raise your <strong>right hand</strong> in front of the webcam with your 
+      palm facing forward.
+    </p>
+
+    <h4>How to Use</h4>
+    <ul>
+      <li>Click “Allow” when the browser asks for webcam permission.</li>
+      <li>Hold your hand steady in the frame and try different angles.</li>
+      <li>Move closer or farther to observe how accuracy changes.</li>
+    </ul>
+
+    <h4>Model Limitations</h4>
+    <p>
+      The classifier may misread gestures when fingers overlap or when lighting 
+      changes. Rotation of the hand and background clutter also affect accuracy.
+    </p>
+  </div>
+
+  <!-- Embed Frame Styled Box -->
+  <div class="tm-frame-box">
+    <p id="loading-msg">Loading model... please wait.</p>
+
+    <iframe
+      src="https://editor.p5js.org/czeremuga/full/cGu21suXN"
+      width="100%"
+      height="600"
+      style="border:none; border-radius:10px;"
+      allow="camera; microphone"
+      aria-label="Teachable Machine Live Classifier">
+    </iframe>
+
+    <p class="tm-hint">
+      *If the webcam does not load, refresh the page or re-enable camera permissions.
+    </p>
+  </div>
+
 </section>
+
 
 <!-- 2. Model Training Details -->
 <section id="training">
