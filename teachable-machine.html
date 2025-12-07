@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teachable Machine Project</title>
     <link rel="stylesheet" href="stylepage.css">
+    <style>
+    .tm-info-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(136, 255, 200, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .tm-frame-box {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 12px;
+        border: 2px solid #88ffc8;
+        box-shadow: 0 0 10px rgba(136,255,200,0.3);
+    }
+
+    #loading-msg {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #88ffc8;
+        animation: pulse 1.5s infinite;
+        margin-bottom: 10px;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+    </style>
+
 </head>
 <body>
 
